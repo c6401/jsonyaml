@@ -1,0 +1,10 @@
+#!/usr/bin/python3
+import json
+import sys
+
+import yaml
+
+if not sys.stdin.isatty():
+    print(yaml.dump(json.load(sys.stdin), default_flow_style=False))
+else:
+    print('please provide json blob as stdin')
